@@ -13,7 +13,7 @@
 // 1. DOM ELEMENT REFERENCES
 // ==============================
 
-const titleInput = document.getElementById("titleInput");
+const titleInput = document.getElementById("TodoTitle");
 const descInput = document.getElementById("descInput");
 const dueInput = document.getElementById("dueInput");
 const personInput = document.getElementById("personInput");
@@ -44,9 +44,18 @@ sortBtn?.addEventListener("click", handleSortTodos);
 // ==============================
 
 function handleAddTodo() {
+    const title = titleInput.value.trim();
+    const descripion  =  descInput.value.trim;
+    const dueTo = dueInput.value;
+    const assigne = personInput.value.trim;
+    const attachmment = filesInput.files? filesInput.files.length:0;
+    if(!title) { 
+         alert("Title is mandatory");
+    return;
+    }
   // Step 2:
-  // - Read form values
-  // - Create todo object
+  //Read form values
+  //+Create todo object
   // - Push into todos array
   // - Call renderTodos()
 }
