@@ -163,18 +163,22 @@ function renderTodos(list = todos) {
     btnGroup.className = "btn-group";
 
     const completeBtn = document.createElement("button");
+    completeBtn.title = "mark done"
     completeBtn.className = "btn btn-outline-success btn-sm";
-    completeBtn.innerHTML = `<i class="bi bi-check-lg"></i>`;
+    completeBtn.innerHTML = todo.completed ? 
+      `<i class="bi bi-check-circle-fill text-success"></i>` : `<i class="bi bi-circle"></i>`;
     completeBtn.addEventListener("click", () => handleMarkDone(todo.id));
 
 
     const editBtn = document.createElement("button");
+    editBtn.title = "edit"
     editBtn.className = "btn btn-outline-primary btn-sm";
     editBtn.innerHTML = `<i class="bi bi-pencil"></i>`;
     editBtn.addEventListener("click", () => handleEditTodo(todo.id));
 
 
     const deleteBtn = document.createElement("button");
+    deleteBtn.title = "delete"
     deleteBtn.className = "btn btn-outline-danger btn-sm";
     deleteBtn.innerHTML = `<i class="bi bi-trash"></i>`;
     deleteBtn.addEventListener("click", () => handleDeleteTodo(todo.id));
